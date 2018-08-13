@@ -3,20 +3,105 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.3.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
 	<groupId>com.tanis</groupId>
 	<artifactId>boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Spring Boot</name>
-	<description>Spring Boot demo</description>
+	<description>Spring Boot MultiProject</description>
 
-	<modules>
-		<module>app</module>
-		<module>services</module>
-		<module>database</module>
-		<module>mybatis-repository</module>
-		<module>jpa-repository</module>
-	</modules>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+
+		<spring-boot.version>2.0.3.RELEASE</spring-boot.version>
+	</properties>
+
+	<dependencyManagement>
+
+		<dependencies>
+
+			<!-- Spring Boot Starter -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<!-- Spring Boot Starter Web -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+			
+			<!-- Spring Boot Actuator -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-actuator</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<!-- Spring BOot Starter Test -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>${spring-boot.version}</version>
+				<scope>test</scope>
+			</dependency>
+			
+		</dependencies>
+
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+		
+			<!-- Spring Boot Maven Run Plugin. Skipped due to parent module. -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>mybatis</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+
+			<modules>
+				<module>app</module>
+				<module>services</module>
+				<module>database</module>
+				<module>mybatis-repository</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>jpa</id>
+
+			<modules>
+				<module>app</module>
+				<module>services</module>
+				<module>database</module>
+				<module>jpa-repository</module>
+			</modules>
+		</profile>
+	</profiles>
 
 </project>
