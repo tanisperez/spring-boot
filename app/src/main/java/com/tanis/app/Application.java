@@ -1,9 +1,9 @@
-package com.tanis.boot;
+package com.tanis.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.tanis")
 public class Application {
 
 	public static void main(final String[] args) {
