@@ -11,7 +11,7 @@
 
 	<artifactId>services</artifactId>
 	<packaging>jar</packaging>
-	
+
 	<name>Spring Boot Services</name>
 	<description>Spring Boot Services</description>
 
@@ -28,6 +28,12 @@
 			<groupId>com.tanis</groupId>
 			<artifactId>database</artifactId>
 			<version>${project.version}</version>
+		</dependency>
+
+		<!-- Model Mapper -->
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
 		</dependency>
 
 	</dependencies>
