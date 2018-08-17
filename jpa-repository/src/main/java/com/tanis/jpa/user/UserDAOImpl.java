@@ -1,4 +1,4 @@
-package com.tanis.mybatis.user;
+package com.tanis.jpa.user;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,20 +9,19 @@ import org.springframework.stereotype.Repository;
 
 import com.tanis.database.daos.user.User;
 import com.tanis.database.daos.user.UserDAO;
-import com.tanis.mybatis.mappers.UserMapper;
 
 @Repository
 public class UserDAOImpl implements UserDAO {
 
 	@Autowired
-	private UserMapper userMapper;
+	private UserRepository userRepository;
 
 	@Autowired
 	private ModelMapper modelMapper;
 
 	@Override
 	public List<User> findAll() {
-		final List<UserEntity> users = this.userMapper.findAll();
+		final List<UserEntity> users = this.userRepository.findAll();
 		return users.stream()
 				.map(user -> this.modelMapper.map(user, User.class))
 				.collect(Collectors.toList());

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tanis.mybatis.mappers.UserMapper">
 
-	<resultMap type="com.tanis.database.daos.user.User" id="userMap">
+	<resultMap type="com.tanis.mybatis.user.UserEntity" id="userMap">
 		<id column="USER_ID" property="userId" javaType="long"/>
 		<result column="NAME" property="name" javaType="java.lang.String"/>
 	</resultMap>
