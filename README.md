@@ -17,6 +17,12 @@ mvn package -Pjpa
 
 The profiles are designed to exclude the unused dependencies. For example, if you choose MyBatis, the module jpa-repository is excluded from the final JAR file.
 
+To start the applicacion you can use the following commands:
+
+mvn spring-boot:run -Pmybatis
+
+mvn spring-boot:run -Pjpa
+
 ## 1. Application
 
 This module contains the Application entry point of the project. Also, it includes the application Controllers and common configuration shared between the layers.
