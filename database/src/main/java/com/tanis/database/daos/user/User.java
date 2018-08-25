@@ -1,5 +1,9 @@
 package com.tanis.database.daos.user;
 
+/**
+ * User entity abstraction of the repository implementation used.
+ *
+ */
 public class User {
 
 	private long userId;

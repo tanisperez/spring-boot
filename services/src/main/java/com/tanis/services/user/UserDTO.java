@@ -2,6 +2,10 @@ package com.tanis.services.user;
 
 import java.io.Serializable;
 
+/**
+ * User DTO.
+ *
+ */
 public class UserDTO implements Serializable {
 
 	private static final long serialVersionUID = -3189165323636315811L;

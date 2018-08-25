@@ -8,6 +8,9 @@ import org.apache.ibatis.annotations.Select;
 
 import com.tanis.mybatis.user.UserEntity;
 
+/**
+ * User Mapper.
+ */
 @Mapper
 public interface UserMapper {
 

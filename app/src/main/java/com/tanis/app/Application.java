@@ -3,6 +3,9 @@ package com.tanis.app;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Spring Boot Application start up.
+ */
 @SpringBootApplication(scanBasePackages = "com.tanis")
 public class Application {
 

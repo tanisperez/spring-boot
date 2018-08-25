@@ -10,6 +10,10 @@ import org.springframework.stereotype.Service;
 import com.tanis.database.daos.user.User;
 import com.tanis.database.daos.user.UserDAO;
 
+/**
+ * User Service implementation.
+ *
+ */
 @Service
 public class UserServiceImpl implements UserService {
 

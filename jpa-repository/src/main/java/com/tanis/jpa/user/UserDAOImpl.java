@@ -10,6 +10,11 @@ import org.springframework.stereotype.Repository;
 import com.tanis.database.daos.user.User;
 import com.tanis.database.daos.user.UserDAO;
 
+/**
+ * UserDAO implementation using JPA + Hibernate. It converts UserEntity to User
+ * class using a ModelMapper.
+ *
+ */
 @Repository
 public class UserDAOImpl implements UserDAO {
 

@@ -11,6 +11,11 @@ import com.tanis.database.daos.user.User;
 import com.tanis.database.daos.user.UserDAO;
 import com.tanis.mybatis.mappers.UserMapper;
 
+/**
+ * UserDAO implementation using MyBatis. It converts UserEntity to User class
+ * using a ModelMapper.
+ *
+ */
 @Repository
 public class UserDAOImpl implements UserDAO {
 

@@ -1,5 +1,8 @@
 package com.tanis.mybatis.user;
 
+/**
+ * User Entity.
+ */
 public class UserEntity {
 
 	private long userId;
